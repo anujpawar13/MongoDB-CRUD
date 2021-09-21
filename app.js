@@ -8,7 +8,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 // mongoose.connect("mongodb+srv://sam:sam@mongodb-crud.2xtip.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{   useNewUrlParser: true,
+// this (link inside the "..") is the value in heroku (KEY-VALUE)
+
 mongoose.connect(process.env.mongoUrl,{   useNewUrlParser: true,
+    // KEY is mongoUrl
+
 useUnifiedTopology: true,
 useCreateIndex: true,
 useFindAndModify: false });
